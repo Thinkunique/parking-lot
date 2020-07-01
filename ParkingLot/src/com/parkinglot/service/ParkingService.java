@@ -1,9 +1,13 @@
 package com.parkinglot.service;
 
-public interface ParkingLotService {
+import com.parkinglot.model.Car;
+
+public interface ParkingService {
 
 	void launchParkingLotSystem();
 	
 	void createParkingLot(int size);
+	
+	public void parkVehicle(Car car);
 	
 }
