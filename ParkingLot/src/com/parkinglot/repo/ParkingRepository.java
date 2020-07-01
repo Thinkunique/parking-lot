@@ -1,6 +1,6 @@
 package com.parkinglot.repo;
 
-import java.util.Stack;
+import java.util.TreeSet;
 
 import com.parkinglot.model.ParkingSlot;
 
@@ -10,8 +10,8 @@ public interface ParkingRepository {
 	
 	void allocateParkingSlot(ParkingSlot slot);
 	
-	void emptyParkingSlot();
+	void deallocateParkingSlot(int slotNumber);
 	
-	Stack<Integer> getAvailableSlots();
+	TreeSet<Integer> getAvailableSlots();
 	
 }

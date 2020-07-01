@@ -1,6 +1,6 @@
 package com.parkinglot.model;
 
-import java.util.Stack;
+import java.util.TreeSet;
 
 public class ParkingSpace {
 
@@ -8,14 +8,18 @@ public class ParkingSpace {
 	
 	int size;
 	
-	Stack<Integer> availableSlots;
+	TreeSet<Integer> availableSlots;
 	
 	boolean isFull;
 	
 	public ParkingSpace(int size)
 	{
 		this.slots=new ParkingSlot[size];
-		this.availableSlots=new Stack<>();
+		this.availableSlots=new TreeSet<>();
+		for(int i=size-1;i>=0;i--)
+		{
+			this.availableSlots.add(i);
+		}
 	}
 
 	/**
@@ -49,14 +53,14 @@ public class ParkingSpace {
 	/**
 	 * @return the availableSlots
 	 */
-	public Stack<Integer> getAvailableSlots() {
+	public TreeSet<Integer> getAvailableSlots() {
 		return availableSlots;
 	}
 
 	/**
 	 * @param availableSlots the availableSlots to set
 	 */
-	public void setAvailableSlots(Stack<Integer> availableSlots) {
+	public void setAvailableSlots(TreeSet<Integer> availableSlots) {
 		this.availableSlots = availableSlots;
 	}
 

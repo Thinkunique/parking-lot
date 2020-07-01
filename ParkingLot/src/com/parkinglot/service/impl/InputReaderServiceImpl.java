@@ -22,7 +22,7 @@ public class InputReaderServiceImpl implements InputReaderService {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		return input.split("\\s+")[0];
+		return input;
 	}
 
 }
