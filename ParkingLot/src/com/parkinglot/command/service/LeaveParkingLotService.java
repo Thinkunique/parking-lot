@@ -15,8 +15,8 @@ public class LeaveParkingLotService implements Command {
 	
 	@Override
 	public void executeCommand(String[] input) {
-		
-
+		int slotNumber=Integer.parseInt(input[1]);
+		this.parkingService.deallocateParkingSlot(slotNumber);
 	}
 
 }

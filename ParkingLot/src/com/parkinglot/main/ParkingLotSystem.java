@@ -10,26 +10,33 @@ import com.parkinglot.service.impl.InputReaderServiceImpl;
 import com.parkinglot.util.CommandUtility;
 
 public class ParkingLotSystem {
-	
+
 	public static void main(String[] args) throws IOException {
-		
-		InputReaderService inputReader=new InputReaderServiceImpl();
-		String command=inputReader.readInputCommand();
+
+		InputReaderService inputReader = new InputReaderServiceImpl();
+		String command = inputReader.readInputCommand();
 		executeCommand(command);
 	}
-	
+
 	public static void executeCommand(String inputCommand) {
-		
-		String inputs[]=inputCommand.split(ParkingLotConstants.SPACE);
-		String commandAction=inputs[0];
-		Map<String,Command> commands=CommandUtility.getAllCommands();
-		for(Map.Entry<String, Command> command:commands.entrySet())
-		{
-			if(command.getKey().equalsIgnoreCase(commandAction))
-			{
+		boolean executed = commandAction(inputCommand);
+		if (!executed) {
+			System.out.println("Invalid");
+		}
+	}
+
+	public static boolean commandAction(String inputCommand) {
+
+		String inputs[] = inputCommand.split(ParkingLotConstants.SPACE);
+		String commandAction = inputs[0];
+		Map<String, Command> commands = CommandUtility.getAllCommands();
+		for (Map.Entry<String, Command> command : commands.entrySet()) {
+			if (command.getKey().equalsIgnoreCase(commandAction)) {
 				command.getValue().executeCommand(inputs);
+				return true;
 			}
 		}
+		return false;
 	}
 
 }
