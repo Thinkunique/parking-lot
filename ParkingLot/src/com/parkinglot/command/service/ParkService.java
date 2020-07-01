@@ -8,7 +8,6 @@ import com.parkinglot.util.CarUtility;
 
 public class ParkService implements Command {
 
-
 	ParkingService parkingService;
 	
 	public ParkService()
