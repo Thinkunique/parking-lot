@@ -1,4 +1,4 @@
-package com.parkinglot.command.service;
+package com.parkinglot.command;
 
 public interface Command {
 

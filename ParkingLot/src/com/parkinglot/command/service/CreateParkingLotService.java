@@ -1,6 +1,6 @@
-package com.parkinglot.command.service.impl;
+package com.parkinglot.command.service;
 
-import com.parkinglot.command.service.Command;
+import com.parkinglot.command.Command;
 import com.parkinglot.service.ParkingService;
 import com.parkinglot.service.impl.ParkingServiceImpl;
 
@@ -8,7 +8,7 @@ public class CreateParkingLotService implements Command {
 
 	ParkingService parkingService;
 	
-	CreateParkingLotService()
+	public CreateParkingLotService()
 	{
 		this.parkingService=new ParkingServiceImpl();
 	}

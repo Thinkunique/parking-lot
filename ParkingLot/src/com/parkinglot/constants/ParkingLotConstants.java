@@ -16,4 +16,6 @@ public class ParkingLotConstants {
 
 	public static final String SLOT_NUMBER_FOR_REGISTRATION_NUMBER="slot_number_for_registration_number";
 	
+	public static final String SPACE="\\s+";
+	
 }

@@ -6,17 +6,14 @@ import com.parkinglot.model.ParkingSlot;
 import com.parkinglot.repo.ParkingRepository;
 import com.parkinglot.repo.impl.ParkingRepositoryImpl;
 import com.parkinglot.service.ParkingService;
-import com.parkinglot.service.ParkingSlotService;
+import com.parkinglot.util.SlotUtility;
 
 public class ParkingServiceImpl implements ParkingService {
-
-	private ParkingSlotService slotService;
 	
 	private ParkingRepository repo;
 	
 	public ParkingServiceImpl()
 	{
-		this.slotService=new ParkingSlotServiceImpl();
 		this.repo=new ParkingRepositoryImpl();
 	}
 
@@ -28,7 +25,7 @@ public class ParkingServiceImpl implements ParkingService {
 	@Override
 	public void parkVehicle(Car car) {
 		int slotNumber=this.repo.getAvailableSlots().first();
-		ParkingSlot slot=slotService.createParkingSlot(slotNumber, car);
+		ParkingSlot slot=SlotUtility.getParkingSlot(slotNumber, car);
 		repo.allocateParkingSlot(slot);
 	}
 
