@@ -9,4 +9,7 @@ public interface ParkingService {
 	public void parkVehicle(Car car);
 	
 	public void deallocateParkingSlot(int slotNumber);
+	
+	public void parkingStatus();
+	
 }

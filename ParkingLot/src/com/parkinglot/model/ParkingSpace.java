@@ -16,7 +16,7 @@ public class ParkingSpace {
 	{
 		this.slots=new ParkingSlot[size];
 		this.availableSlots=new TreeSet<>();
-		for(int i=size-1;i>=0;i--)
+		for(int i=0;i<size;i++)
 		{
 			this.availableSlots.add(i);
 		}

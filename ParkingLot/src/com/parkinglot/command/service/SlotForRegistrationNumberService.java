@@ -3,6 +3,7 @@ package com.parkinglot.command.service;
 import com.parkinglot.command.Command;
 import com.parkinglot.service.ParkingService;
 import com.parkinglot.service.impl.ParkingServiceImpl;
+import com.parkinglot.util.ParkingServiceUtility;
 
 public class SlotForRegistrationNumberService implements Command {
 
@@ -10,7 +11,7 @@ public class SlotForRegistrationNumberService implements Command {
 	
 	public SlotForRegistrationNumberService()
 	{
-		this.parkingService=new ParkingServiceImpl();
+		this.parkingService=ParkingServiceUtility.getParkingService();
 	}
 	
 	

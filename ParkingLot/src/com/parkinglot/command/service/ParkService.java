@@ -3,8 +3,8 @@ package com.parkinglot.command.service;
 import com.parkinglot.command.Command;
 import com.parkinglot.model.Car;
 import com.parkinglot.service.ParkingService;
-import com.parkinglot.service.impl.ParkingServiceImpl;
 import com.parkinglot.util.CarUtility;
+import com.parkinglot.util.ParkingServiceUtility;
 
 public class ParkService implements Command {
 
@@ -12,7 +12,7 @@ public class ParkService implements Command {
 	
 	public ParkService()
 	{
-		this.parkingService=new ParkingServiceImpl();
+		this.parkingService=ParkingServiceUtility.getParkingService();
 	}
 	
 	@Override

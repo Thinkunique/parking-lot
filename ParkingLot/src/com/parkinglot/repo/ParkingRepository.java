@@ -14,4 +14,6 @@ public interface ParkingRepository {
 	
 	TreeSet<Integer> getAvailableSlots();
 	
+	public ParkingSlot[] getParkingSlots();
+	
 }

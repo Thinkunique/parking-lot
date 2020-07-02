@@ -3,6 +3,7 @@ package com.parkinglot.command.service;
 import com.parkinglot.command.Command;
 import com.parkinglot.service.ParkingService;
 import com.parkinglot.service.impl.ParkingServiceImpl;
+import com.parkinglot.util.ParkingServiceUtility;
 
 public class ParkingLotStatusService implements Command {
 
@@ -10,14 +11,13 @@ public class ParkingLotStatusService implements Command {
 	
 	public ParkingLotStatusService()
 	{
-		this.parkingService=new ParkingServiceImpl();
+		this.parkingService=ParkingServiceUtility.getParkingService();
 	}
 	
 	
 	@Override
 	public void executeCommand(String[] input) {
-		
-		
+		this.parkingService.parkingStatus();
 	}
 
 }

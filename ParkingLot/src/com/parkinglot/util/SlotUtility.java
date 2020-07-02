@@ -8,6 +8,7 @@ public class SlotUtility {
 	public static ParkingSlot getParkingSlot(int slotNumber,Car car) {
 		ParkingSlot slot=new ParkingSlot();
 		slot.setSlotNumber(slotNumber);
+		slot.setOccupied(true);
 		slot.setCar(car);
 		return slot;
 	}

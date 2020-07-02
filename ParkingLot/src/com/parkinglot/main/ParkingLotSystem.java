@@ -12,20 +12,15 @@ import com.parkinglot.util.CommandUtility;
 public class ParkingLotSystem {
 
 	public static void main(String[] args) throws IOException {
-
 		InputReaderService inputReader = new InputReaderServiceImpl();
-		String command = inputReader.readInputCommand();
-		executeCommand(command);
-	}
-
-	public static void executeCommand(String inputCommand) {
-		boolean executed = commandAction(inputCommand);
-		if (!executed) {
-			System.out.println("Invalid");
+		while(true)
+		{
+			String command = inputReader.readInputCommand();
+			executeCommand(command);
 		}
 	}
 
-	public static boolean commandAction(String inputCommand) {
+	public static boolean executecommandAction(String inputCommand) {
 
 		String inputs[] = inputCommand.split(ParkingLotConstants.SPACE);
 		String commandAction = inputs[0];
@@ -37,6 +32,13 @@ public class ParkingLotSystem {
 			}
 		}
 		return false;
+	}
+	
+	public static void executeCommand(String inputCommand) {
+		boolean executed = executecommandAction(inputCommand);
+		if (!executed) {
+			System.out.println("Invalid Command!");
+		}
 	}
 
 }

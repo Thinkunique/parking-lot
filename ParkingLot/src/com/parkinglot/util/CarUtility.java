@@ -1,6 +1,5 @@
 package com.parkinglot.util;
 
-import com.parkinglot.constants.Color;
 import com.parkinglot.model.Car;
 
 public class CarUtility {
@@ -9,7 +8,7 @@ public class CarUtility {
 	{
 		Car car=new Car();
 		car.setRegistration_number(regNum);
-		car.setColor(Color.valueOf(color));
+		car.setColor(color);
 		return car;
 	}
 	
