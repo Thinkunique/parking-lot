@@ -1,5 +1,7 @@
 package com.parkinglot.service.impl;
 
+import java.util.List;
+
 import com.parkinglot.model.Car;
 import com.parkinglot.model.ParkingSlot;
 import com.parkinglot.repo.ParkingRepository;
@@ -18,6 +20,7 @@ public class ParkingServiceImpl implements ParkingService {
 	@Override
 	public void createParkingLot(int size) {
 		repo.createNewParkingLot(size);
+		System.out.println("Created parking lot with "+size+" slots");
 	}
 
 	@Override
@@ -35,19 +38,37 @@ public class ParkingServiceImpl implements ParkingService {
 	@Override
 	public void deallocateParkingSlot(int slotNumber) {
 		repo.deallocateParkingSlot(slotNumber);
-		System.out.println("Slot number "+(slotNumber+1)+" is free");
+		System.out.println("Slot number "+(slotNumber)+" is free");
 	}
 
 	@Override
 	public void parkingStatus() {
 		ParkingSlot[] slots = repo.getParkingSlots();
-		System.out.println("Slot No.\tRegistration No\tColor");
+		System.out.println("---------------------------------------------");
+		System.out.println("Slot No.  | Registration No.         | Color");
+		System.out.println("---------------------------------------------");
 		for (ParkingSlot slot : slots) {
 			if (slot != null) {
 				Car car = slot.getCar();
-				System.out.println((slot.getSlotNumber()+1)+ "\t" + car.getRegistration_number() + "\t" + car.getColor());
+				System.out.println((slot.getSlotNumber()+1)+ "\t  | " + car.getRegistration_number() + "\t     | " + car.getColor());
 			}
 		}
+		System.out.println("---------------------------------------------");
+	}
+
+	@Override
+	public List<String> getRegistrationNumbersForCarColor(String color) {
+		return repo.getRegistrationNumbersForCarColor(color);
+	}
+
+	@Override
+	public List<String> getSlotNumbersForCarColor(String color) {
+		return repo.getSlotNumbersForCarColor(color);
+	}
+
+	@Override
+	public String getSlotNumberForRegistrationNumber(String regNum) {
+		return repo.getSlotNumberForRegistrationNumber(regNum);
 	}
 
 }
