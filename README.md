@@ -1,4 +1,4 @@
-# Parking-Lot System
+# parking-lot system
 
 Problem Statement
 
