@@ -1,0 +1,102 @@
+create_parking_lot 6
+park KA-01-HH-1234 White
+park KA-01-HH-9999 White
+park KA-01-BB-0001 Black
+park KA-01-HH-7777 Red
+park KA-01-HH-2701 Blue
+park KA-01-HH-3141 Black
+Created parking lot with 6 slots
+Allocated slot number: 1
+Allocated slot number: 2
+Allocated slot number: 3
+Allocated slot number: 4
+Allocated slot number: 5
+Allocated slot number: 6
+status
+---------------------------------------------
+Slot No.  | Registration No.         | Color
+---------------------------------------------
+1	  | KA-01-HH-1234	     | White
+2	  | KA-01-HH-9999	     | White
+3	  | KA-01-BB-0001	     | Black
+4	  | KA-01-HH-7777	     | Red
+5	  | KA-01-HH-2701	     | Blue
+6	  | KA-01-HH-3141	     | Black
+---------------------------------------------
+leave 2
+Slot number 2 is free
+leave 4
+Slot number 4 is free
+leave 5
+Slot number 5 is free
+status
+---------------------------------------------
+Slot No.  | Registration No.         | Color
+---------------------------------------------
+1	  | KA-01-HH-1234	     | White
+3	  | KA-01-BB-0001	     | Black
+6	  | KA-01-HH-3141	     | Black
+---------------------------------------------
+park KA-01-HH-9999 White
+Allocated slot number: 2
+status
+---------------------------------------------
+Slot No.  | Registration No.         | Color
+---------------------------------------------
+1	  | KA-01-HH-1234	     | White
+2	  | KA-01-HH-9999	     | White
+3	  | KA-01-BB-0001	     | Black
+6	  | KA-01-HH-3141	     | Black
+---------------------------------------------
+park KA-01-HH-9997 White
+Allocated slot number: 4
+status
+---------------------------------------------
+Slot No.  | Registration No.         | Color
+---------------------------------------------
+1	  | KA-01-HH-1234	     | White
+2	  | KA-01-HH-9999	     | White
+3	  | KA-01-BB-0001	     | Black
+4	  | KA-01-HH-9997	     | White
+6	  | KA-01-HH-3141	     | Black
+---------------------------------------------
+park KA-01-HH-9900 White
+Allocated slot number: 5
+status
+---------------------------------------------
+Slot No.  | Registration No.         | Color
+---------------------------------------------
+1	  | KA-01-HH-1234	     | White
+2	  | KA-01-HH-9999	     | White
+3	  | KA-01-BB-0001	     | Black
+4	  | KA-01-HH-9997	     | White
+5	  | KA-01-HH-9900	     | White
+6	  | KA-01-HH-3141	     | Black
+---------------------------------------------
+park KA-01-HH-9945 White
+Sorry, parking lot is full
+park KA-01-HH-9000 White
+Sorry, parking lot is full
+status
+---------------------------------------------
+Slot No.  | Registration No.         | Color
+---------------------------------------------
+1	  | KA-01-HH-1234	     | White
+2	  | KA-01-HH-9999	     | White
+3	  | KA-01-BB-0001	     | Black
+4	  | KA-01-HH-9997	     | White
+5	  | KA-01-HH-9900	     | White
+6	  | KA-01-HH-3141	     | Black
+---------------------------------------------
+registration_numbers_for_cars_with_colour White
+[KA-01-HH-1234, KA-01-HH-9999, KA-01-HH-9997, KA-01-HH-9900]
+slot_number_for_registration_number MH-04-AY-1100
+Not found
+slot_number_for_registration_number KA-01-HH-9997
+4
+slot_numbers_for_cars_with_colour White
+[1, 2, 4, 5]
+slot_numbers_for_cars_with_colour Red
+Not found
+slot_numbers_for_cars_with_colour Black
+[3, 6]
