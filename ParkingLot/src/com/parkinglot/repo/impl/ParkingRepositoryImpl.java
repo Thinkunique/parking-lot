@@ -54,7 +54,7 @@ public class ParkingRepositoryImpl implements ParkingRepository {
 		List<String> list = this.colorsMap.get(car.getColor()).getRegNum();
 		List<String> list2 = this.colorsMap.get(car.getColor()).getSlotNum();
 		list.remove(car.getRegistration_number());
-		list2.remove(slot.getSlotNumber());
+		list2.remove(String.valueOf(slot.getSlotNumber()+1));
 		regMap.remove(car.getRegistration_number());
 		parkingSpace.getSlots()[slotNumber - 1] = null;
 	}
