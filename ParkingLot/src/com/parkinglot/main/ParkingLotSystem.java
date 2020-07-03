@@ -11,31 +11,25 @@ import com.parkinglot.util.InputUtility;
 public class ParkingLotSystem {
 
 	public static void main(String[] args) throws IOException {
-		while(true)
-		{
+		while (true) {
 			String command = InputUtility.readCommand();
 			executeCommand(command);
 		}
 	}
 
-	public static boolean executecommandAction(String inputCommand) {
-
+	public static void executeCommand(String inputCommand) {
 		String inputs[] = inputCommand.split(ParkingLotConstants.SPACE);
 		String commandAction = inputs[0];
+		boolean commandNotFound = true;
 		Map<String, Command> commands = CommandUtility.getAllCommands();
 		for (Map.Entry<String, Command> command : commands.entrySet()) {
 			if (command.getKey().equalsIgnoreCase(commandAction)) {
 				command.getValue().executeCommand(inputs);
-				return true;
+				commandNotFound = false;
 			}
 		}
-		return false;
-	}
-	
-	public static void executeCommand(String inputCommand) {
-		boolean executed = executecommandAction(inputCommand);
-		if (!executed) {
-			System.out.println("Invalid Command!");
+		if (commandNotFound) {
+			System.out.println("Command not found.");
 		}
 	}
 
