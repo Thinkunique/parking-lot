@@ -54,7 +54,7 @@ public class ParkingRepositoryImpl implements ParkingRepository {
 		List<String> list = this.colorsMap.get(car.getColor()).getRegNum();
 		List<String> list2 = this.colorsMap.get(car.getColor()).getSlotNum();
 		list.remove(car.getRegistration_number());
-		list2.remove(String.valueOf(slot.getSlotNumber()+1));
+		list2.remove(String.valueOf(slot.getSlotNumber() + 1));
 		regMap.remove(car.getRegistration_number());
 		parkingSpace.getSlots()[slotNumber - 1] = null;
 	}
@@ -72,12 +72,18 @@ public class ParkingRepositoryImpl implements ParkingRepository {
 	@Override
 	public List<String> getRegistrationNumbersForCarColor(String color) {
 		ColorGroup group = this.colorsMap.get(color);
+		if (group == null) {
+			return null;
+		}
 		return group.getRegNum();
 	}
 
 	@Override
 	public List<String> getSlotNumbersForCarColor(String color) {
 		ColorGroup group = this.colorsMap.get(color);
+		if (group == null) {
+			return null;
+		}
 		return group.getSlotNum();
 	}
 
