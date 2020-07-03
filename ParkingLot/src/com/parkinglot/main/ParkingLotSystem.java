@@ -5,17 +5,15 @@ import java.util.Map;
 
 import com.parkinglot.command.Command;
 import com.parkinglot.constants.ParkingLotConstants;
-import com.parkinglot.service.InputReaderService;
-import com.parkinglot.service.impl.InputReaderServiceImpl;
 import com.parkinglot.util.CommandUtility;
+import com.parkinglot.util.InputUtility;
 
 public class ParkingLotSystem {
 
 	public static void main(String[] args) throws IOException {
-		InputReaderService inputReader = new InputReaderServiceImpl();
 		while(true)
 		{
-			String command = inputReader.readInputCommand();
+			String command = InputUtility.readCommand();
 			executeCommand(command);
 		}
 	}
